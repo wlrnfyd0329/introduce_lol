@@ -17,7 +17,6 @@ header {
 header #header-logo {
     margin-left: 8%;
     margin-top: 1%;
-    display: inline-block;
 }
 
 header #header-btn {
@@ -26,14 +25,43 @@ header #header-btn {
     top: 40%;
 }
 
+/* article */
+
 article {
     text-align: center;
     height: 90%;
 }
 
-article img {
-    margin-top: 3%;
-    width: 70%;
+article #background {
+    height: 95%;
+    margin-top: 5%;
+}
+
+article .position_icon {
+    position: absolute;
+}
+
+article .position_icon>img:hover {
+    width: 55px;
+}
+
+.positionStyle {
+    filter: invert(100%);
+    background-color: gray;
+    background-size: 100px;
+    border: 6px solid gray;
+    border-radius: 50%;
+    box-shadow: 0 0 16px black;
+}
+
+.clickPositionStyle{
+    width: 55px;
+    filter: invert(0%);
+    background-color: white;
+    background-size: 100px;
+    border: 6px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 16px white;
 }
 
 /* footer */
