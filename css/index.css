@@ -7,6 +7,7 @@ body, html {
 /* header */
 
 header {
+    z-index: 200;
     width: 100%;
     position: fixed;
     min-width: 320px;
@@ -25,43 +26,55 @@ header #header-btn {
     top: 40%;
 }
 
+#aside-menu {
+    height: 100%;
+    widtH: 22%;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    z-index: 1999;
+    vertical-align: middle;
+    animation-duration: 0.5s;
+    animation-name: openMenu;
+}
+
+#aside-menu #header-menu {
+    float: left;
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#aside-menu #header-menu ol {
+    vertical-align: middle;
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 20%;
+}
+
+#aside-menu #header-menu ol li {
+    color: rgb(235, 235, 235);
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 15px;
+}
+
+@keyframes openMenu {
+    from {
+        left: -22%;
+    }
+
+    to {
+        left: 0%;
+    }
+}
+
 /* article */
 
 article {
     text-align: center;
     height: 90%;
-}
-
-article #background {
-    height: 95%;
-    margin-top: 5%;
-}
-
-article .position_icon {
-    position: absolute;
-}
-
-article .position_icon>img:hover {
-    width: 55px;
-}
-
-.positionStyle {
-    filter: invert(100%);
-    background-color: gray;
-    background-size: 100px;
-    border: 6px solid gray;
-    border-radius: 50%;
-    box-shadow: 0 0 16px black;
-}
-
-.clickPositionStyle{
-    width: 55px;
-    filter: invert(0%);
-    background-color: white;
-    background-size: 100px;
-    border: 6px solid white;
-    border-radius: 50%;
-    box-shadow: 0 0 16px white;
 }
 
 /* footer */
