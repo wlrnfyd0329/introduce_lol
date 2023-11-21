@@ -1,0 +1,231 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+/* header */
+
+header {
+    z-index: 200;
+    width: 100%;
+    position: fixed;
+    min-width: 320px;
+    background: transparent;
+    height: auto;
+}
+
+header #header-logo {
+    margin-left: 8%;
+    margin-top: 1%;
+}
+
+header #header-btn {
+    position: absolute;
+    left: 3%;
+    top: 40%;
+}
+
+#aside-menu {
+    height: 100%;
+    widtH: 22%;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    z-index: 1999;
+    vertical-align: middle;
+    animation-duration: 0.5s;
+    animation-name: openMenu;
+}
+
+#aside-menu #header-menu {
+    float: left;
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#aside-menu #header-menu ol {
+    vertical-align: middle;
+    text-align: left;
+    margin-left: 50px;
+    margin-top: 20%;
+}
+
+#aside-menu #header-menu ol li {
+    color: rgb(235, 235, 235);
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 15px;
+}
+
+@keyframes openMenu {
+    from {
+        left: -22%;
+    }
+
+    to {
+        left: 0%;
+    }
+}
+
+/* article */
+
+article {
+    text-align: center;
+    height: 90%;
+}
+
+/* footer */
+
+footer {
+    position: relative;
+    overflow: hidden;
+    display: table;
+    clear: both;
+    background: #272727;
+    width: 100%;
+    height: 10%;
+}
+
+footer>div {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+}
+
+footer .sns {
+    line-height: 10px;
+}
+
+footer .sns .clearfy {
+    margin-left: 20px;
+}
+
+footer .sns li {
+    float: left;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+}
+
+footer .sns .main {
+    background: url(../icon/home.svg);
+    background-position: center;
+    background-size: 93%;
+    filter: invert(100%);
+}
+
+footer .sns .main:hover {
+    background: url(../icon/home.svg);
+    background-position: center;
+    background-size: 92%;
+    background-color: gray;
+    filter: invert(0%);
+}
+
+footer .sns .youtube {
+    background: url(../icon/youtube.svg);
+    background-position: center;
+    background-size: cover;
+    filter: invert(100%);
+}
+
+footer .sns .youtube:hover {
+    background: url(../icon/youtube.svg);
+    background-position: center;
+    background-size: cover;
+    background-color: gray;
+    filter: invert(0%);
+}
+
+footer .sns .instagram {
+    background: url(../icon/instagram.svg);
+    background-position: center;
+    background-size: cover;
+    filter: invert(100%);
+}
+
+footer .sns .instagram:hover {
+    background: url(../icon/instagram.svg);
+    background-position: center;
+    background-size: cover;
+    background-color: gray;
+    filter: invert(0%);
+}
+
+footer .sns .facebook {
+    background: url(../icon/facebook.svg);
+    background-position: center;
+    background-size: cover;
+    filter: invert(100%);
+}
+
+footer .sns .facebook:hover {
+    background: url(../icon/facebook.svg);
+    background-position: center;
+    background-size: cover;
+    background-color: gray;
+    filter: invert(0%);
+}
+
+footer .sns .twit {
+    background: url(../icon/twitter.svg);
+    background-position: center;
+    background-size: cover;
+    filter: invert(100%);
+    
+}
+
+footer .sns .twit:hover {
+    background: url(../icon/twitter.svg);
+    background-position: center;
+    background-size: cover;
+    background-color: gray;
+    filter: invert(0%);
+}
+
+footer .sns li a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: grey;
+}
+
+footer .family-site div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    width: 25%;
+    text-align: center;
+}
+
+footer .family-site div>a>h3 {
+    text-align: center;
+    font-family: 'InfinitySans-BoldA1';
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #929191;
+}
+
+footer .copyright {
+    font-size: 10px;
+    font-family: 'Camber-M';
+    color: #6b6b6b;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+
+footer .copyright p span {
+    white-space: nowrap;
+}
+
+#last {
+    margin-right: 20px;
+}
