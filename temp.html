@@ -1,70 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Line Drawing</title>
     <style>
-        .container {
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
             position: relative;
-            width: 300px;
-            height: 200px;
+        }
+
+        #bookContainer {
+            display: flex;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .page {
+            width: 50vw;
+            height: 100vh;
+            overflow: hidden;
+            float: left;
+            background-color: #f0f0f0;
+            box-sizing: border-box;
             border: 1px solid #ccc;
+            position: relative;
         }
 
-        .div1, .div2 {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background-color: #3498db;
+        .page-content {
+            padding: 20px;
         }
 
-        .div1 {
-            top: 50px;
-            left: 50px;
+        #prevPageBtn,
+        #nextPageBtn {
+            position: fixed;
+            top: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1;
+            background-color: white;
         }
 
-        .div2 {
-            top: 100px;
-            left: 200px;
+        #prevPageBtn {
+            left: 20px;
         }
 
-        .line {
-            position: absolute;
-            border: 1px solid #000;
+        #nextPageBtn {
+            right: 20px;
         }
     </style>
 </head>
+
 <body>
 
-    <div class="container">
-        <div class="div1"></div>
-        <div class="div2"></div>
-        <div class="line" id="line"></div>
+    <div id="prevPageBtn">&lt;</div>
+    <div id="nextPageBtn">&gt;</div>
+    <div id="bookContainer">
+        <div class="page" id="page1">
+            <div class="page-content">
+                <h2>Page 1</h2>
+                <p>This is the content of page 1.</p>
+            </div>
+        </div>
+        <div class="page" id="page2">
+            <div class="page-content">
+                <h2>Page 2</h2>
+                <p>This is the content of page 2.</p>
+            </div>
+        </div>
+        <!-- Add more pages as needed -->
     </div>
 
     <script>
-        // JavaScript로 선 그리기
-        window.onload = function() {
-            var div1 = document.querySelector('.div1');
-            var div2 = document.querySelector('.div2');
-            var line = document.getElementById('line');
+        document.addEventListener('DOMContentLoaded', function () {
+            const bookContainer = document.getElementById('bookContainer');
+            const prevPageBtn = document.getElementById('prevPageBtn');
+            const nextPageBtn = document.getElementById('nextPageBtn');
 
-            var x1 = div1.offsetLeft + div1.offsetWidth / 2;
-            var y1 = div1.offsetTop + div1.offsetHeight / 2;
+            let currentPage = 1;
 
-            var x2 = div2.offsetLeft + div2.offsetWidth / 2;
-            var y2 = div2.offsetTop + div2.offsetHeight / 2;
+            function goToPage(pageNumber) {
+                const offset = (pageNumber - 1) * -50;
+                bookContainer.style.transform = `translateX(${offset}vw)`;
+                currentPage = pageNumber;
+            }
 
-            var length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-            var angle = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
+            function goToPrevPage() {
+                if (currentPage > 1) {
+                    goToPage(currentPage - 1);
+                }
+            }
 
-            line.style.width = length + 'px';
-            line.style.transform = 'rotate(' + angle + 'deg)';
-            line.style.left = x1 + 'px';
-            line.style.top = y1 + 'px';
-        };
+            function goToNextPage() {
+                // Add condition to check the maximum number of pages
+                if (currentPage < 5) {
+                    goToPage(currentPage + 1);
+                }
+            }
+
+            prevPageBtn.addEventListener('click', goToPrevPage);
+            nextPageBtn.addEventListener('click', goToNextPage);
+        });
     </script>
 
 </body>
+
 </html>

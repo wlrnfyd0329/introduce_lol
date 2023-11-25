@@ -8,7 +8,7 @@ body, html {
 
 header {
     z-index: 200;
-    width: 100%;
+    width: 50%;
     position: fixed;
     min-width: 320px;
     background: transparent;
@@ -16,14 +16,14 @@ header {
 }
 
 header #header-logo {
-    margin-left: 8%;
-    margin-top: 1%;
+    margin-left: 16%;
+    margin-top: 2%;
 }
 
 header #header-btn {
     position: absolute;
-    left: 3%;
-    top: 40%;
+    left: 6%;
+    top: 45%;
 }
 
 #aside-menu {
@@ -32,7 +32,7 @@ header #header-btn {
     overflow: hidden;
     background: rgba(0, 0, 0, 0.6);
     position: fixed;
-    z-index: 1999;
+    z-index: 250;
     vertical-align: middle;
     animation-duration: 0.5s;
     animation-name: openMenu;
@@ -112,14 +112,14 @@ footer .sns li {
 }
 
 footer .sns .main {
-    background: url(../icon/home.svg);
+    background: url(../icon/index/home.svg);
     background-position: center;
     background-size: 93%;
     filter: invert(100%);
 }
 
 footer .sns .main:hover {
-    background: url(../icon/home.svg);
+    background: url(../icon/index/home.svg);
     background-position: center;
     background-size: 92%;
     background-color: gray;
@@ -127,14 +127,14 @@ footer .sns .main:hover {
 }
 
 footer .sns .youtube {
-    background: url(../icon/youtube.svg);
+    background: url(../icon/index/youtube.svg);
     background-position: center;
     background-size: cover;
     filter: invert(100%);
 }
 
 footer .sns .youtube:hover {
-    background: url(../icon/youtube.svg);
+    background: url(../icon/index/youtube.svg);
     background-position: center;
     background-size: cover;
     background-color: gray;
@@ -142,14 +142,14 @@ footer .sns .youtube:hover {
 }
 
 footer .sns .instagram {
-    background: url(../icon/instagram.svg);
+    background: url(../icon/index/instagram.svg);
     background-position: center;
     background-size: cover;
     filter: invert(100%);
 }
 
 footer .sns .instagram:hover {
-    background: url(../icon/instagram.svg);
+    background: url(../icon/index/instagram.svg);
     background-position: center;
     background-size: cover;
     background-color: gray;
@@ -157,14 +157,14 @@ footer .sns .instagram:hover {
 }
 
 footer .sns .facebook {
-    background: url(../icon/facebook.svg);
+    background: url(../icon/index/facebook.svg);
     background-position: center;
     background-size: cover;
     filter: invert(100%);
 }
 
 footer .sns .facebook:hover {
-    background: url(../icon/facebook.svg);
+    background: url(../icon/index/facebook.svg);
     background-position: center;
     background-size: cover;
     background-color: gray;
@@ -172,7 +172,7 @@ footer .sns .facebook:hover {
 }
 
 footer .sns .twit {
-    background: url(../icon/twitter.svg);
+    background: url(../icon/index/twitter.svg);
     background-position: center;
     background-size: cover;
     filter: invert(100%);
@@ -180,7 +180,7 @@ footer .sns .twit {
 }
 
 footer .sns .twit:hover {
-    background: url(../icon/twitter.svg);
+    background: url(../icon/index/twitter.svg);
     background-position: center;
     background-size: cover;
     background-color: gray;
