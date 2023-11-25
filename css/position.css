@@ -43,11 +43,11 @@ article .position_icon>img:hover {
     position: absolute;
     width: 480px;
     top: 30%;
-    left: 67%;
+    left: 65%;
     padding: 20px;
     border: 1px solid gray;
     border-top-left-radius: 20px;
-    animation: appearText 1s ease-in-out forwards;
+    animation: appearText 0.5s ease-in-out forwards;
 }
 
 .text {
@@ -64,7 +64,7 @@ article .position_icon>img:hover {
 }
 
 .removeText {
-    animation: removeText 1s ease-in-out forwards;
+    animation: removeText 0.5s ease-in-out forwards;
 }
 
 @keyframes removeText {
@@ -80,7 +80,7 @@ article .position_icon>img:hover {
 }
 
 .appearText {
-    animation: appearText 1s ease-in-out forwards;
+    animation: appearText 0.5s ease-in-out forwards;
 }
 
 @keyframes appearText {

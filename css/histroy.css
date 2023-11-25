@@ -1,0 +1,241 @@
+/* aside */
+
+aside {
+    z-index: 100;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+aside #title{
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.moveRight {
+    left: 25%;
+    animation: moveRight 1s ease;
+}
+
+.moveUp {
+    top: 23%;
+    animation: moveUp 1s ease;
+}
+
+@keyframes moveRight {
+    0% {
+        left: 50%;
+    }
+
+    100% {
+        left: 25%;
+    }
+}
+
+@keyframes moveUp {
+    0% {
+            top: 30%;
+        }
+    
+    100% {
+        top: 23%;
+    }
+}
+
+.title-explain {
+    width: 400px;
+    padding: 20px;
+    border: 1px solid gray;
+    border-top-left-radius: 20px;
+    opacity: 0;
+    text-align: center;
+    font-size: 17px;
+    color: #fff;
+}
+
+.show-title{
+    opacity: 1;
+    animation: show-title 1s ease;
+}
+
+@keyframes show-title {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* article */
+
+article {
+    z-index: 250;
+    text-align: center;
+}
+
+article #content {
+    float: right;
+    width: 50%;
+    display: none;
+}
+
+.show-content {
+    background-color: #303030;
+    animation: show-content 1s ease;
+}
+
+@keyframes show-content {
+    0% {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+#content h1 {
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#content h1:hover {
+    transform: scale(1.1);
+}
+
+#content h1>strong {
+    color: rgb(255, 244, 119);
+    border-bottom: 3px solid rgb(255, 244, 119);
+}
+
+#content hr {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+article h3 {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
+    margin-left: 70px;
+    margin-right: 70px;
+    padding-top: 50px;
+}
+
+.winner {
+    display: block;
+}
+
+.year details {
+    text-align: left;
+    color: white;
+    font-size: 25px;
+    padding: 12px 12px 12px 0;
+    margin-left: 170px;
+    font-family: "Noto Sans CJK kr", snas-serif;
+    font-weight: 100%;
+}
+
+.year table {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    border-color: rgb(255, 255, 255);
+}
+
+.year table th {
+    width: 90px;
+}
+
+.year table tr {
+    height: 60px;
+}
+
+.year table th img {
+    width: 40px;
+}
+
+.year table td img {
+    width: 120px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.755);
+}
+
+.song {
+    display: none;
+}
+
+.song h3 {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    font-style: normal;
+    text-align: left;
+    margin-left: 120px;
+    padding-top: 20px;
+}
+
+.song h4 {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 120px;
+    padding-bottom: 20px;
+}
+
+.video {
+    display: none;
+}
+
+.video-index {
+    margin-left: 115px;
+    margin-right: 115px;
+    margin-bottom: 20px;
+    display: block;
+    border-bottom: 2px solid white;
+}
+
+.element {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.song-year {
+    cursor: pointer;
+    color: #fff;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    font-size: 30px;
+    opacity: 0.5;
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+
+.song-year:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.active-video {
+    opacity: 1;
+    transform: scale(1.2);
+    color: wheat;
+}
