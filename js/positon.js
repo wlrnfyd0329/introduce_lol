@@ -64,7 +64,7 @@ position_icon[0].addEventListener('click', () => {
 
     setTimeout(function () {
         explanation.querySelector('.title').innerHTML = "탑(Top)<hr>";
-        explanation.querySelector('.explain').innerHTML = "상단 공격로에서 1대1 전투를 치루는 역할군입니다.<br>적 앞에서 물러서지 않고 눈에 보이는 모든 적을 섬멸하여<br>팀을 수호하는 <strong style='color: yellow'>용맹한 전사</strong>가 맡는 역할군입니다.";
+        explanation.querySelector('.explain').innerHTML = "상단 공격로에서 1대1 전투를 치루는 역할군입니다.<br>적 앞에서 물러서지 않고<br>눈에 보이는 모든 적을 섬멸하여<br>팀을 수호하는 <strong style='color: yellow'>용맹한 전사</strong>가 맡는 역할군입니다.";
         explanation.classList.remove('removeText');
         explanation.classList.add('appearText');
     }, 500);
