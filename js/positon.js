@@ -79,7 +79,7 @@ position_icon[1].addEventListener('click', () => {
 
     setTimeout(function () {
         explanation.querySelector('.title').innerHTML = "정글(Jungle)<hr>";
-        explanation.querySelector('.explain').innerHTML = "공격로 사이의 몬스터를 사냥하며<br>아군을 도와 적을 기습하는 역할군입니다.<br>빠른 두뇌회전으로 적과의 수싸움을 통해<br>전장의 흐름을 지배하는 <strong style='color: yellow'>영리한 지략가</strong>가 맡는 역할군입니다.";
+        explanation.querySelector('.explain').innerHTML = "공격로 사이의 몬스터를 사냥하며<br>아군을 도와 적을 기습하는 역할군입니다.<br>빠른 두뇌회전으로 적과의 수싸움을 통해<br>전장의 흐름을 지배하는<br><strong style='color: yellow'>영리한 지략가</strong>가 맡는 역할군입니다.";
         explanation.classList.remove('removeText');
         explanation.classList.add('appearText');
     }, 500);});
@@ -93,7 +93,7 @@ position_icon[2].addEventListener('click', () => {
 
     setTimeout(function () {
         explanation.querySelector('.title').innerHTML = "미드(Mid)<hr>";
-        explanation.querySelector('.explain').innerHTML = "중단 공격로에서 1대1 전투를 치루는 역할군입니다.<br>전장의 중앙에서 팀적으로 많은 영향을 끼치기 때문에<br>빠른 상황판단과 실행력을 가진<br><strong style='color: yellow'>다재다능한 해결사</strong>가 맡는 역할군입니다.";
+        explanation.querySelector('.explain').innerHTML = "중단 공격로에서 1대1 전투를 치루는 역할군입니다.<br>전장의 중앙에서 팀적으로<br>많은 영향을 끼치기 때문에<br>빠른 상황판단과 실행력을 가진<br><strong style='color: yellow'>다재다능한 해결사</strong>가 맡는 역할군입니다.";
         explanation.classList.add('appearText');
     }, 500);});
     

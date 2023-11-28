@@ -26,6 +26,15 @@ header #header-btn {
     top: 45%;
 }
 
+header #header-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 38%
+}
+
 #aside-menu {
     height: 100%;
     widtH: 22%;
@@ -207,7 +216,6 @@ footer .family-site div {
 
 footer .family-site div>a>h3 {
     text-align: center;
-    font-family: 'InfinitySans-BoldA1';
     font-size: 20px;
     text-transform: uppercase;
     color: #929191;
@@ -215,7 +223,6 @@ footer .family-site div>a>h3 {
 
 footer .copyright {
     font-size: 10px;
-    font-family: 'Camber-M';
     color: #6b6b6b;
     text-align: right;
     text-transform: uppercase;

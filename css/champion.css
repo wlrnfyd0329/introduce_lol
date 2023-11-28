@@ -1,0 +1,72 @@
+/* article */
+
+article {
+    z-index: 250;
+    text-align: center;
+    margin-left: 15%;
+    padding-top: 10%;
+    width: 70%;
+    height: auto;
+}
+
+.searchBox input{
+    width: 300px;
+    height: 50px;
+    text-indent: 15px;
+    font-size: 20px;
+    border: 3px solid skyblue;
+    border-radius: 5px;
+    box-shadow: 0 0 20px white;
+}
+
+.champion-list {
+    margin-bottom: 50px;
+}
+
+.champion-list h2 {
+    transform: translateX(-35%);
+    color: white;
+    font-size: 50px;
+}
+
+.champion-list hr {
+    color: white;
+}
+
+.champion-name {
+    cursor: pointer;
+    display: inline-block;
+    width: 250px;
+    height: 300px;
+    margin: 10px;
+    padding-top: 20px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.champion-name img {
+    width: 200px;
+    height: 225px;
+}
+
+.champion-name p {
+    color: white;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.champion-explain {
+    text-align: center;
+    z-index: 200;
+    background-color: #303030;
+    border: 10px double rosybrown;
+    position: absolute;
+    display: none;
+    width: 320px;
+    height: 345px;
+    transform: translate(-45px, 18px);
+}
+
+.champion-name:hover .champion-explain {
+    display: block;
+}
