@@ -83,13 +83,13 @@ article {
 }
 
 article #content {
+    background-color: #303030;
     float: right;
     width: 50%;
     display: none;
 }
 
 .show-content {
-    background-color: #303030;
     animation: show-content 1s ease;
 }
 
@@ -113,7 +113,7 @@ article #content {
 }
 
 #content h1:hover {
-    transform: scale(1.1);
+    font-size: 55px;
 }
 
 #content h1>strong {
@@ -147,7 +147,6 @@ article h3 {
     font-size: 25px;
     padding: 12px 12px 12px 0;
     margin-left: 170px;
-    font-family: "Noto Sans CJK kr", snas-serif;
     font-weight: 100%;
 }
 
@@ -178,6 +177,10 @@ article h3 {
 
 .song {
     display: none;
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    background-color: #303030;
 }
 
 .song h3 {
