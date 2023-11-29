@@ -7,7 +7,7 @@ function filter() {
         champion_name = champion_list[i].getElementsByClassName("champion-name");
         for (let j = 0; j < champion_name.length; j++) {
             korean_name = champion_name[j].querySelector("#name").innerHTML;
-            english_name = champion_name[j].querySelector("img").src.slice(54,-4);
+            english_name = champion_name[j].querySelector("img").alt;
             if (korean_name.includes(search) || english_name.includes(search)) {
                 champion_name[j].style.display = 'inline-block';
                 isSearch = true;
@@ -26,6 +26,6 @@ function filter() {
 }
 
 function moveUrl(i) {
-    var name = document.getElementsByClassName("champion-name")[i].querySelector("img").src.slice(54,-4);
+    var name = document.getElementsByClassName("champion-name")[i].querySelector("img").alt;
     window.open("https://www.leagueoflegends.com/ko-kr/champions/"+name+"/");
 }
