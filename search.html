@@ -6,6 +6,7 @@
     <title>LoL | Search Page</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/search.css">
 </head>
 
 <body>
@@ -14,19 +15,114 @@
         <div id="header-logo">
             <img src="./icon/index/logo.png" alt="LoL 로고" width="250" height="100">
         </div>
+        <div id="header-title">소환사 검색</div>
         <div id="aside-menu" style="display:none;">
             <div id="header-menu">
                 <ol>
                     <li><a href="index.html">역할군 종류</a></li>
                     <li><a href="champion.html">챔피언 종류</a></li>
                     <li><a href="history.html">LoL 월드 챔피언십</a></li>
-                    <li style="color: rgb(255, 255, 106)"><a href="search.html">전적 검색</a></li></ol>
+                    <li style="color: rgb(255, 255, 106)"><a href="search.html">소환사 검색</a></li></ol>
             </div>
         </div>
     </header>
 
     <article>
-        
+        <div class="searchBox">
+            <input type="text" id="search-input" placeholder="소환사 이름을 검색하세요." />
+            <div id="search" onclick="search()"></div>
+        </div>
+        <br><br>
+        <table class="recentSearch" border="1">
+            <caption style="color: white; font-size: 25px; font-weight: bold;">최근 검색한 소환사</caption>
+            <tr>
+                <td>유뽀시래기</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br><br>
+        <div id="search-content" style="display: none;">
+            <div>
+                <div class="summoner-info">
+                    <table style="margin: 20px; text-align: center;">
+                        <tr>
+                            <td rowspan="2">
+                                <img id="summoner-img" src="http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/4569.png"></img>
+                            </td>
+                            <td width="1000px"><div id="summoner-name">유뽀시래기</div></td>
+                        </tr>
+                        <tr>
+                            <td><div id="summoner-level">Lv.157</div></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="rank-info">
+                    <table style="margin: 20px; text-align: center;">
+                        <tr>
+                            <td rowspan="3">
+                                <img id="rank-img" src="./icon/rank/Bronze.png"></img>
+                            </td>
+                            <td width="1000px" colspan="2">
+                                <div id="rank">EMERALD IV <br><span>66 LP</span></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="rank-win">40 승</div>
+                            </td>
+                            <td><div id="rank-lose">38 패</div></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"> 
+                                <div id="rank-winning-rate">승률 : 51%</div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div>
+                <div class="champion-info">
+                    <div style="color: black; font-size: 25px; font-weight: bold;">자주 사용하는 챔피언</div>
+                    <table id="champion">
+                        <tr>
+                            <td></td>
+                            <td class="line" width="250px"></td>
+                            <td class="line" width="250px"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="line" width="250px"></td>
+                            <td class="line" width="250px"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="line" width="250px"></td>
+                            <td class="line" width="250px"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="line" width="250px"></td>
+                            <td class="line" width="250px"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="line" width="250px"></td>
+                            <td class="line" width="250px"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
     </article>
 
     <footer>
@@ -59,8 +155,8 @@
         </div>
         <div class="family-site">
             <div>
-                <a href="https://www.seoultech.ac.kr" title="서울과학기술대학교홈페이지" target="_blank">
-                    <h3>seoultech</h3>
+                <a href="https://github.com/yhj0329" title="유혁진 github" target="_blank">
+                    <h3>github</h3>
                 </a>
             </div>
         </div>
@@ -79,6 +175,7 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/search.js"></script>
 </body>
 
 </html>

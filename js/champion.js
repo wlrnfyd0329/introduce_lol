@@ -1,4 +1,5 @@
 function filter() {
+    document.getElementById("searchClear").style.display = "inline";
     var search = document.getElementById("search").value.toLowerCase();
     var champion_list = document.getElementsByClassName("champion-list");
 
@@ -27,5 +28,11 @@ function filter() {
 
 function moveUrl(i) {
     var name = document.getElementsByClassName("champion-name")[i].querySelector("img").alt;
-    window.open("https://www.leagueoflegends.com/ko-kr/champions/"+name+"/");
+    window.open(`https://www.leagueoflegends.com/ko-kr/champions/${name}/`);
+}
+
+function searchClear() {
+    document.getElementById("search").value = "";
+    filter();
+    document.getElementById("searchClear").style.display = "none";
 }

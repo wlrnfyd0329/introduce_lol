@@ -1,0 +1,157 @@
+article {
+    z-index: 250;
+    text-align: center;
+    margin-left: 15%;
+    padding-top: 10%;
+    width: 70%;
+    height: 70%;
+}
+
+.searchBox input {
+    width: 500px;
+    height: 50px;
+    text-indent: 15px;
+    font-size: 20px;
+    border: 3px solid skyblue;
+    border-radius: 5px;
+    box-shadow: 0 0 20px white;
+}
+
+#search {
+    cursor: pointer;
+    font-size: 100px;
+    display: inline-block;
+    box-sizing: content-box;
+    width: 15px;
+    height: 15px;
+    border: 5px solid skyblue;
+    position: relative;
+    border-radius: 0.35em;
+    margin-left: -45px;
+}
+
+#search:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: -10px;
+    bottom: -7px;
+    border-width: 0;
+    background: skyblue;
+    width: 10px;
+    height: 5px;
+    transform: rotate(45deg);
+}
+
+.recentSearch {
+    margin-left: 7%;
+    background-color: white;
+    text-align: center;
+    border: 5px double skyblue;
+    border-radius: 10px;
+}
+
+.recentSearch td {
+    font-size: 18px;
+    width: 200px;
+    height: 80px;
+}
+
+.search-content {
+    height: auto;
+}
+
+.summoner-info {
+    float: left;
+    background-color: white;
+    border: 5px double black;
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
+    margin-left: 100px;
+}
+
+#summoner-img {
+    width: 100px;
+    margin: 15px;
+    padding: 2px;
+    border: 2px solid black;
+}
+
+#summoner-name {
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#summoner-level {
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.rank-info {
+    float: right;
+    background-color: white;
+    border: 5px double black;
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
+    margin-right: 100px;
+}
+
+#rank-img {
+    width: 150px;
+}
+
+#rank {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#rank span {
+    font-size: 23px;
+    font-weight: lighter;
+}
+
+#rank-win {
+    color: blue;
+    font-size: 20px;
+}
+
+#rank-lose {
+    color: red;
+    font-size: 20px;
+}
+
+#rank-winning-rate {
+    font-size: 20px;
+}
+
+.champion-info {
+    float: left;
+    background-color: white;
+    border: 5px double black;
+    text-align: center;
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+    margin-left: 350px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#champion td {
+    font-size: 25px;
+    font-weight: 900;
+    margin: 5px;
+}
+
+#champion td>img {
+    width: 100px;
+    margin: 10px;
+}
+
+.line {
+    border-bottom: 1px solid gray;
+}
