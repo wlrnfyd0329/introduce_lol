@@ -44,3 +44,10 @@ button {
     font-weight: bold;
     color: #ffffff;
 }
+
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: #ff0000;
+}
