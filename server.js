@@ -85,7 +85,34 @@ app.post('/register.html', function (request, response) {
 });
 
 app.post('/search.html', function (request, response) {
-    console.log(request.session.username);
+    if (request.body.isLoad == 'true') {
+        connection.query('SELECT * FROM recentSearch WHERE username = ?', [request.session.username], function (error, results, fields) {
+            if (error) throw error;
+            response.json(results);
+        });
+    }
+    else{
+        connection.query('UPDATE recentSearch SET searchname1 = ? WHERE username = ?;', [request.body.name0, request.session.username],
+            function (error, data) { });
+        connection.query('UPDATE recentSearch SET searchname2 = ? WHERE username = ?;', [request.body.name1, request.session.username],
+            function (error, data) { });
+        connection.query('UPDATE recentSearch SET searchname3 = ? WHERE username = ?;', [request.body.name2, request.session.username],
+            function (error, data) { });
+        connection.query('UPDATE recentSearch SET searchname4 = ? WHERE username = ?;', [request.body.name3, request.session.username],
+            function (error, data) { });
+        connection.query('UPDATE recentSearch SET searchname5 = ? WHERE username = ?;', [request.body.name4, request.session.username],
+            function (error, data) { });
+        connection.query('UPDATE recentSearch SET searchname6 = ? WHERE username = ?;', [request.body.name5, request.session.username],
+            function (error, data) { });
+        connection.query('UPDATE recentSearch SET searchname7 = ? WHERE username = ?;', [request.body.name6, request.session.username],
+            function (error, data) { });
+        connection.query('UPDATE recentSearch SET searchname8 = ? WHERE username = ?;', [request.body.name7, request.session.username],
+            function (error, data) { });
+        connection.query('UPDATE recentSearch SET searchname9 = ? WHERE username = ?;', [request.body.name8, request.session.username],
+            function (error, data) { });
+        connection.query('UPDATE recentSearch SET searchname10 = ? WHERE username = ?;', [request.body.name9, request.session.username],
+            function (error, data) { });
+    }
 });
 
 app.listen(3000, () => {

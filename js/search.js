@@ -1,18 +1,82 @@
-
 const api_key = 'RGAPI-a6da66c4-38ab-4f94-aad1-d67b61193abc';
 var summoner_info;
 var rank_info;
 var champion_info;
 var champion_data;
 
+fetch("http://127.0.0.1:3000/search.html", {
+    method: 'POST', 
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+    }, 
+    body: new URLSearchParams({
+        isLoad: 'true',
+    }) })
+    .then((response) => {
+        return response.json();
+    })
+    .then(data => {
+        var recent = document.getElementById("recentSearch").querySelectorAll("td");
+        var num = 0;
+        for (let i in data['0']) {
+            if (i == "username") continue;
+            recent[num++].innerText = data['0'][i];
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching summoner info:', error);
+    });
+
 function recentSearch(i) {
     var recent = document.getElementById("recentSearch").querySelectorAll("td")[i];
     document.getElementById("search-input").value = recent.innerText;
 }
 
+function updateRecent(name) {
+    var recent = document.getElementById("recentSearch").querySelectorAll("td");
+    var isOverlap = false;
+    for(let i = 0; i < 10; i++) {
+        if(recent[i].innerText == name) {
+            for (let j = i; j > 0; j--) {
+                recent[j].innerText = recent[j - 1].innerText;
+            }
+            recent[0].innerText = name;
+            isOverlap = true;
+        }
+    }
+    if (!isOverlap) {
+        for (let i = 9; i > 0; i--) {
+            recent[i].innerText = recent[i - 1].innerText;
+        }
+        recent[0].innerText = name;
+    }
+    fetch("http://127.0.0.1:3000/search.html", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({
+            name0: recent[0].innerText,
+            name1: recent[1].innerText,
+            name2: recent[2].innerText,
+            name3: recent[3].innerText,
+            name4: recent[4].innerText,
+            name5: recent[5].innerText,
+            name6: recent[6].innerText,
+            name7: recent[7].innerText,
+            name8: recent[8].innerText,
+            name9: recent[9].innerText,
+        })
+    })
+        .catch(error => {
+            console.error('Error fetching summoner info:', error);
+        });
+}
+
 function search() {
     var searchName = document.getElementById("search-input").value;
     if (searchName != "") {
+        updateRecent(searchName);
         const summoner = `https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${searchName}?api_key=${api_key}`;
 
         fetch(summoner)
