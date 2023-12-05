@@ -1,11 +1,37 @@
-<td><img src="./icon/position/top_icon.svg" style="width: 45px;  margin-top: -100px; margin-bottom: -100px;"></td>
-<td><img src="./icon/position/jungle_icon.svg" style="width: 45px;  margin-top: -100px; margin-bottom: -100px;"></td>
-<td><img src="./icon/position/mid_icon.svg" style="width: 45px;  margin-top: -100px; margin-bottom: -100px;"></td>
-<td><img src="./icon/position/adc_icon.webp" style="width: 45px;  margin-top: -100px; margin-bottom: -100px;"></td>
-<td><img src="./icon/position/sup_icon.svg" style="width: 45px;  margin-top: -100px; margin-bottom: -100px;"></td>
+<!DOCTYPE html>
+<html lang="en">
 
-<td><span style="color: white;">탑 Top</span></td>
-<td><span style="color: white;">정글 Jungle</span></td>
-<td><span style="color: white;">미드 Mid</span></td>
-<td><span style="color: white;">원딜 Adc</span></td>
-<td><span style="color: white;">서폿 Sup</span></td>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click to Fill Input</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        input {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="centerWord" onclick="fillInput()">가나다</div>
+    <input id="inputField" type="text" placeholder="클릭하여 입력">
+
+    <script>
+        function fillInput() {
+            const centerWord = document.getElementById('centerWord').innerText;
+            document.getElementById('inputField').value = centerWord;
+        }
+    </script>
+
+</body>
+
+</html>

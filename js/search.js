@@ -1,31 +1,35 @@
 
-const api_key = 'RGAPI-e7f322cd-4b3e-4df5-832c-bfe7424fa373';
+const api_key = 'RGAPI-a6da66c4-38ab-4f94-aad1-d67b61193abc';
 var summoner_info;
 var rank_info;
 var champion_info;
 var champion_data;
 
-
+function recentSearch(i) {
+    var recent = document.getElementById("recentSearch").querySelectorAll("td")[i];
+    document.getElementById("search-input").value = recent.innerText;
+}
 
 function search() {
-    document.getElementById("search-content").style.display = "block";
     var searchName = document.getElementById("search-input").value;
-    const summoner = `https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${searchName}?api_key=${api_key}`;
+    if (searchName != "") {
+        const summoner = `https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${searchName}?api_key=${api_key}`;
 
-    fetch(summoner)
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            summoner_info = data;
-            set_summoner();
-            load_date();
-        })
-        .catch(error => {
-            console.error('Error fetching summoner info:', error);
-            alert(`불러오기 실패!<br>오류 이유 : ${error}`);
-        });
-    document.getElementById("search-content").style.display = "block";
+        fetch(summoner)
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                summoner_info = data;
+                set_summoner();
+                load_date();
+                document.getElementById("search-content").style.display = "block";
+            })
+            .catch(error => {
+                console.error('Error fetching summoner info:', error);
+                alert(`불러오기 실패! 소환사 이름이 존재하지 않습니다. 오류 이유 : ${error}`);
+            });
+    }
 }
 
 function load_date() {
@@ -42,7 +46,7 @@ function load_date() {
         })
         .catch(error => {
             console.error('Error fetching summoner info:', error);
-            alert(`불러오기 실패!<br>오류 이유 : ${error}`);
+            alert(`불러오기 실패! 오류 이유 : ${error}`);
         });
     fetch(champion)
         .then((response) => {
@@ -54,7 +58,7 @@ function load_date() {
         })
         .catch(error => {
             console.error('Error fetching summoner info:', error);
-            alert(`불러오기 실패!<br>오류 이유 : ${error}`);
+            alert(`불러오기 실패! 오류 이유 : ${error}`);
         });
 }
 
@@ -74,6 +78,7 @@ function set_rank() {
     var summoner_win = document.getElementById("rank-win");
     var summoner_lose = document.getElementById("rank-lose");
     var summoner_winning_rate = document.getElementById("rank-winning-rate");
+    var rank_type = document.getElementById("rank-type");
 
     if (rank_info.length == 0) {
         summoner_rank_img.src = ``;
@@ -82,12 +87,36 @@ function set_rank() {
         summoner_lose.innerText = ``;
         summoner_winning_rate.innerText = ``;
     }
-    else {
+    else if (rank_info.length == 1) {
+        if (rank_info['0']['queueType'] == "RANKED_SOLO_5x5") {
+            rank_type.innerText = "솔로 랭크";
+        }
+        else {
+            rank_type.innerText = "자유 랭크";
+        }
         summoner_rank_img.src = `./icon/rank/${rank_info['0']['tier']}.png`;
         summoner_rank.innerHTML = `${rank_info['0']['tier']} ${rank_info['0']['rank']}<br><span>${rank_info['0']['leaguePoints']} LP</span>`;
         summoner_win.innerText = `${rank_info['0']['wins']} 승`;
         summoner_lose.innerText = `${rank_info['0']['losses']} 패`;
         summoner_winning_rate.innerText = `승률 : ${Math.round((Number(rank_info['0']['wins']) / (Number(rank_info['0']['wins']) + Number(rank_info['0']['losses']))) * 100)}%`;
+    }
+    else {
+        rank_type.innerText = "솔로 랭크";
+        if (rank_info['0']['queueType'] == "RANKED_SOLO_5x5") {
+            summoner_rank_img.src = `./icon/rank/${rank_info['0']['tier']}.png`;
+            summoner_rank.innerHTML = `${rank_info['0']['tier']} ${rank_info['0']['rank']}<br><span>${rank_info['0']['leaguePoints']} LP</span>`;
+            summoner_win.innerText = `${rank_info['0']['wins']} 승`;
+            summoner_lose.innerText = `${rank_info['0']['losses']} 패`;
+            summoner_winning_rate.innerText = `승률 : ${Math.round((Number(rank_info['0']['wins']) / (Number(rank_info['0']['wins']) + Number(rank_info['0']['losses']))) * 100)}%`;
+        }
+        else {
+            summoner_rank_img.src = `./icon/rank/${rank_info['1']['tier']}.png`;
+            summoner_rank.innerHTML = `${rank_info['1']['tier']} ${rank_info['1']['rank']}<br><span>${rank_info['1']['leaguePoints']} LP</span>`;
+            summoner_win.innerText = `${rank_info['1']['wins']} 승`;
+            summoner_lose.innerText = `${rank_info['1']['losses']} 패`;
+            summoner_winning_rate.innerText = `승률 : ${Math.round((Number(rank_info['1']['wins']) / (Number(rank_info['1']['wins']) + Number(rank_info['1']['losses']))) * 100)}%`;
+
+        }
     }
 }
 
@@ -111,6 +140,6 @@ function set_champion() {
         })
         .catch(error => {
             console.error('Error fetching summoner info:', error);
-            alert(`불러오기 실패!<br>오류 이유 : ${error}`);
+            alert(`불러오기 실패! 오류 이유 : ${error}`);
         });
 }
