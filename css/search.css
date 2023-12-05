@@ -43,7 +43,7 @@ article {
     transform: rotate(45deg);
 }
 
-.recentSearch {
+#recentSearch {
     margin-left: 7%;
     background-color: white;
     text-align: center;
@@ -51,7 +51,7 @@ article {
     border-radius: 10px;
 }
 
-.recentSearch td {
+#recentSearch td {
     font-size: 18px;
     width: 200px;
     height: 80px;
@@ -95,9 +95,14 @@ article {
     background-color: white;
     border: 5px double black;
     width: 400px;
-    height: 200px;
+    height: 250px;
     border-radius: 10px;
     margin-right: 100px;
+}
+
+#rank-type {
+    font-size: 20px; 
+    font-weight: bold;
 }
 
 #rank-img {

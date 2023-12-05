@@ -19,7 +19,7 @@
         <div id="aside-menu" style="display:none;">
             <div id="header-menu">
                 <ol>
-                    <li><a href="index.html">역할군 종류</a></li>
+                    <li><a href="position.html">역할군 종류</a></li>
                     <li><a href="champion.html">챔피언 종류</a></li>
                     <li><a href="history.html">LoL 월드 챔피언십</a></li>
                     <li style="color: rgb(255, 255, 106)"><a href="search.html">소환사 검색</a></li></ol>
@@ -29,25 +29,25 @@
 
     <article>
         <div class="searchBox">
-            <input type="text" id="search-input" placeholder="소환사 이름을 검색하세요." />
+            <input type="text" id="search-input" placeholder="소환사 이름을 검색하세요." onKeypress="javascript:if(event.keyCode==13) {search()}"/>
             <div id="search" onclick="search()"></div>
         </div>
         <br><br>
-        <table class="recentSearch" border="1">
+        <table id="recentSearch" border="1">
             <caption style="color: white; font-size: 25px; font-weight: bold;">최근 검색한 소환사</caption>
             <tr>
-                <td>유뽀시래기</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td onclick="recentSearch(0)">유뽀시래기</td>
+                <td onclick="recentSearch(1)"></td>
+                <td onclick="recentSearch(2)"></td>
+                <td onclick="recentSearch(3)"></td>
+                <td onclick="recentSearch(4)"></td>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td onclick="recentSearch(5)"></td>
+                <td onclick="recentSearch(6)"></td>
+                <td onclick="recentSearch(7)"></td>
+                <td onclick="recentSearch(8)"></td>
+                <td onclick="recentSearch(9)"></td>
             </tr>
         </table>
         <br><br>
@@ -57,7 +57,7 @@
                     <table style="margin: 20px; text-align: center;">
                         <tr>
                             <td rowspan="2">
-                                <img id="summoner-img" src="http://ddragon.leagueoflegends.com/cdn/10.11.1/img/profileicon/4569.png"></img>
+                                <img id="summoner-img" src="http://ddragon.leagueoflegends.com/cdn/13.23.1/img/profileicon/4569.png"></img>
                             </td>
                             <td width="1000px"><div id="summoner-name">유뽀시래기</div></td>
                         </tr>
@@ -68,9 +68,10 @@
                 </div>
                 <div class="rank-info">
                     <table style="margin: 20px; text-align: center;">
+                        <caption id="rank-type">솔로 랭크</caption>
                         <tr>
                             <td rowspan="3">
-                                <img id="rank-img" src="./icon/rank/Bronze.png"></img>
+                                <img id="rank-img" src="./icon/rank/BRONZE.png"></img>
                             </td>
                             <td width="1000px" colspan="2">
                                 <div id="rank">EMERALD IV <br><span>66 LP</span></div>
