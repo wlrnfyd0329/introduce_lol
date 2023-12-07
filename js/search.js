@@ -1,4 +1,4 @@
-const api_key = 'RGAPI-a6da66c4-38ab-4f94-aad1-d67b61193abc';
+const api_key = 'RGAPI-527d05e6-b229-4810-a6d9-1327ed0a5acb';
 var summoner_info;
 var rank_info;
 var champion_info;
