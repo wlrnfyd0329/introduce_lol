@@ -1,6 +1,6 @@
 # lol.github.io
 
-[홈페이지](https://yhj0329.github.io/lol.github.io/position.html)  
+[홈페이지](https://yhj0329.github.io/introduce_lol/position.html)  
 
 게임 League of Legends를 소개하는 웹사이트입니다.  
 - 로그인은 node.js 서버와 데이터베이스가 열려있지 않아 홈페이지에서 확인할 수 없습니다.
@@ -543,7 +543,6 @@ app.listen(3000, () => {
 ## git 웹 사이트 이용하는 방법
 
 1. git repository를 만든다  
-Repository name : 원하는이름.github.io  
 Public 으로 설정
 2. repository에 index.html 파일 업로드
 3. Settings에서 Code and automation의 마지막 Pages 메뉴를 클릭해서 활성화한다.
