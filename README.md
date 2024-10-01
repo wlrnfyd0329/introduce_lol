@@ -1,4 +1,4 @@
-# introduce_lol
+# Introduce LoL
 
 [홈페이지](https://yhj0329.github.io/introduce_lol/position.html)  
 
