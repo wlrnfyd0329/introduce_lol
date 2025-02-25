@@ -1,6 +1,6 @@
 # Introduce LoL
 
-[홈페이지](https://yhj0329.github.io/introduce_lol/position.html)  
+[홈페이지](https://wlrnfyd0329.github.io/introduce_lol/position.html)  
 
 게임 League of Legends를 소개하는 웹사이트입니다.  
 - 로그인은 node.js 서버와 데이터베이스가 열려있지 않아 홈페이지에서 확인할 수 없습니다.
